@@ -1,4 +1,4 @@
--- STEP 2 add tn03
+-- add tn03 interop data
 --
 --   create new client on tn03 - InteropCustomer3 / 90330000000000000001 / 90330000000000000001d9 / IC11in02tn0390330000000000000001d9 / 27710203990
 --   create savings account for client
@@ -62,7 +62,8 @@ INSERT INTO `m_savings_account_charge` (`savings_account_id`, `charge_id`, `is_p
                                         `amount`, `amount_outstanding_derived`,`is_paid_derived`, `waived`, `is_active`)
 VALUES (@saving_acc_id, (SELECT id FROM m_charge WHERE name = @charge_name), 0, 5, 1, 1.000000, 0.000000, 0, 0, 1);
 
---   create new client on tn03 - InteropMerchant3 / 9033222222222222220f / 9033222222222222220fc9 / IC11in02tn039033222222222222220fc9 / 27710203999
+--   create new client on tn03 - InteropMerchant3 / 9033222222222222220f / 9033222222222222220fc9 / IC11in02tn039033222222222222220fc9 / 2733222220f
+
 SET @client_name = 'InteropMerchant3';
 SET @saving_account_no = '9033222222222222220f';
 SET @saving_account_ext_id = '9033222222222222220fc9';

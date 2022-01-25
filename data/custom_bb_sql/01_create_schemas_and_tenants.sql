@@ -12,11 +12,11 @@ SET @last_connection_id = -1;
 
 SELECT COALESCE(max(id), 1)+1 INTO @last_connection_id FROM tenant_server_connections;
 INSERT INTO `tenant_server_connections` (`id`, `schema_name`, `schema_server`, `schema_server_port`, `schema_username`, `schema_password`, `auto_update`) VALUES 
-(@last_connection_id, 'tn03', 'fineractmysql-dev', '3306', 'root', 'skdcnwauicn2ucnaecasdsajdnizucawencascdca', 1);
+(@last_connection_id, 'tn03', 'localhost', '3306', 'root', 'rBdXwrlhWBWNwXckn6b7', 1);
 
 SELECT COALESCE(max(id), 1)+1 INTO @last_connection_id FROM tenant_server_connections;
 INSERT INTO `tenant_server_connections` (`id`, `schema_name`, `schema_server`, `schema_server_port`, `schema_username`, `schema_password`, `auto_update`) VALUES 
-(@last_connection_id, 'tn04', 'fineractmysql-dev', '3306', 'root', 'skdcnwauicn2ucnaecasdsajdnizucawencascdca', 1);
+(@last_connection_id, 'tn04', 'localhost', '3306', 'root', 'rBdXwrlhWBWNwXckn6b7', 1);
 
 -- add tenants
 USE `fineract_tenants`;

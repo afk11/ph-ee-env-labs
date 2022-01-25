@@ -1,9 +1,10 @@
--- STEP 2 add tn03
+-- add tn04 interop data
 --
---   create new client on tn03 - InteropCustomer / 90620000000000000005 / 90620000000000000005d9 / IC11in02tn0390620000000000000005d9 / 27710203999
+--   create new client on tn04 - InteropCustomer4 / 90440000000000000005 / 90440000000000000005d9 / IC11in02tn0490440000000000000005d9 / 27440000005
 --   create savings account for client
 --   create IBAN / MSISDN interop_identifier
 --   create interop_withdraw charge on savings account
+USE `tn04`;
 
 SET @client_name = 'InteropCustomer4';
 SET @saving_account_no = '90440000000000000005';
@@ -61,7 +62,7 @@ INSERT INTO `m_savings_account_charge` (`savings_account_id`, `charge_id`, `is_p
                                         `amount`, `amount_outstanding_derived`,`is_paid_derived`, `waived`, `is_active`)
 VALUES (@saving_acc_id, (SELECT id FROM m_charge WHERE name = @charge_name), 0, 5, 1, 1.000000, 0.000000, 0, 0, 1);
 
--- STEP 3 add tn04
+--   create new client on tn04 - InteropMerchant4 / 9044222222222222222f / 9044222222222222222fc9 / IC11in02tn049044222222222222222fc9 / 2744222222f
 
 SET @client_name = 'InteropMerchant4';
 SET @saving_account_no = '9044222222222222222f';
